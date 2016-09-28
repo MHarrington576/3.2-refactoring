@@ -156,10 +156,11 @@ var spanishColor = {
   "azul": "#0000FF",
   "verde": "#00FF00",
   "negro": "#000000"
-}
+};
 
 function(colorName) {
-  colorName.toLowerCase() === 
+  colorName.toLowerCase() === spanishColor;
+  return something;
 }
 
 // -----------------------------------------------
@@ -174,10 +175,12 @@ function(colorName) {
 // Break it up so that the declaration and
 // assignment are happening on 2 seperate lines.
 
-var foo = "bar";
+// var foo = "bar";
 
 // Put your answer below -------------------------
 
+var foo;
+foo = "bar";
 
 // -----------------------------------------------
 
@@ -216,18 +219,29 @@ var callTenTimes = function(callback) {
 
 // HINT: "global scope"
 
-var score = 0;
-
-var increaseScore = function() {
-  score++;
-};
-
-var decreaseScore = function() {
-  score--;
-};
+// var score = 0;
+//
+// var increaseScore = function() {
+//   score++;
+// };
+//
+// var decreaseScore = function() {
+//   score--;
+// };
 
 // Put your answer below -------------------------
 
+(function(){
+  var score = 0;
+
+  var increaseScore = function() {
+    score++;
+  };
+
+  var decreaseScore = function() {
+    score--;
+  };
+}());
 
 // -----------------------------------------------
 
@@ -240,14 +254,19 @@ var decreaseScore = function() {
 // twoPlusTwo gets set to `undefined`. Refactor
 // the function to make it work.
 
-var addNumbers = function(numberA, numberB) {
-  console.log(numberA + numberB);
-};
-
-var twoPlusTwo = addNumbers(2,2);
+// var addNumbers = function(numberA, numberB) {
+//   console.log(numberA + numberB);
+// };
+//
+// var twoPlusTwo = addNumbers(2,2);
 
 // Put your answer below -------------------------
 
+var twoPlusTwo = addNumbers(2,2);
+
+function addNumbers(numberA, numberB) {
+  console.log(numberA + numberB);
+}
 
 // -----------------------------------------------
 
@@ -266,14 +285,32 @@ var twoPlusTwo = addNumbers(2,2);
 // Then refactor the function to have a default
 // amount of 1 if no param is given.
 
-var speed = 0;
-
-var accelerate = function(amount) {
-  speed += amount;
-};
+// var speed = 0;
+//
+// var accelerate = function(amount) {
+//   speed += amount;
+// };
 
 // Put your answer below -------------------------
 
+/*The speed would be set to NaN above because +=
+* sets "speed"'s value to speed + amount. Thus, if
+* "amount" is not given an integer value, the value
+* of speed becomes defined as 0 + [undefined]. And
+* since [undefined] is not a number, it cannot be
+* added to 0 to create an integer value for speed
+* (i.e. NaN).*/
+
+var speed = 0;
+
+function accelerate(amount) {
+  if (amount >= 1){
+    speed += amount;
+  }
+  else {
+    speed = 1;
+  }
+}
 
 // -----------------------------------------------
 
