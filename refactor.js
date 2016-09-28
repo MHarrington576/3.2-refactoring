@@ -85,12 +85,12 @@ setTimeout(function(){
 
 // Put your answer below -------------------------
 
-C: "x" will not appear because there is no point in
-    the code that commands the console to log "x",
-    and "z" will appear before "y" because the code
-    tells the interpreter to wait one millisecond
-    before logging "y", whereas "z" has no such
-    time restriction.
+/*C: "x" will not appear because there is no point in
+ * the code that commands the console to log "x",
+ * and "z" will appear before "y" because the code
+ * tells the interpreter to wait one millisecond
+ * before logging "y", whereas "z" has no such
+ * time restriction.*/
 
 // -----------------------------------------------
 
@@ -114,7 +114,7 @@ C: "x" will not appear because there is no point in
 // Put your answer below -------------------------
 
 var reverseStr = function(str) {
-  return s.split("").reverse().join("");
+  return str.split("").reverse().join("");
 };
 
 // -----------------------------------------------
@@ -130,38 +130,43 @@ var reverseStr = function(str) {
 // Refactor this function to use an object
 // instead of an if/else statement.
 
-var spanishColor = function(colorName) {
-  if (colorName.toLowerCase() === "rojo") {
-    return "#ff0000";
-  }
-  else if (colorName.toLowerCase() === "blanco") {
-    return "#ffffff";
-  }
-  else if (colorName.toLowerCase() === "azul") {
-    return "#0000ff";
-  }
-  else if (colorName.toLowerCase() === "verde") {
-    return "#00ff00";
-  }
-  else if (colorName.toLowerCase() === "negro") {
-    return "#000000";
-  }
-};
+// var spanishColor = function(colorName) {
+//   if (colorName.toLowerCase() === "rojo") {
+//     return "#ff0000";
+//   }
+//   else if (colorName.toLowerCase() === "blanco") {
+//     return "#ffffff";
+//   }
+//   else if (colorName.toLowerCase() === "azul") {
+//     return "#0000ff";
+//   }
+//   else if (colorName.toLowerCase() === "verde") {
+//     return "#00ff00";
+//   }
+//   else if (colorName.toLowerCase() === "negro") {
+//     return "#000000";
+//   }
+// };
 
 // Put your answer below -------------------------
 
-var spanishColor = {
-  "rojo": "#FF0000",
-  "blanco": "#FFFFFF",
-  "azul": "#0000FF",
-  "verde": "#00FF00",
-  "negro": "#000000"
+var coloresEnEspanol = {
+  rojo: "#FF0000",
+  blanco: "#FFFFFF",
+  azul: "#0000FF",
+  verde: "#00FF00",
+  negro: "#000000"
 };
 
-function(colorName) {
-  colorName.toLowerCase() === spanishColor;
-  return something;
-}
+function spanishFunction(colorName){
+  var hexCode = coloresEnEspanol[colorName.toLowerCase()];
+  return hexCode;
+};
+
+// function alpha(colorName) {
+//   colorName.toLowerCase() === spanishColor;
+//   return something;
+// }
 
 // -----------------------------------------------
 
@@ -187,7 +192,7 @@ foo = "bar";
 //////////////////////////////////////////////////
 //////////////////////////////////////////////////
 
-// 7. --------------------------------------------
+// 7. -UPDATED-QUESTION---------------------------
 
 // The function `callTenTimes` takes an argument
 // that is another function and will call that
@@ -197,12 +202,18 @@ foo = "bar";
 // function.
 
 var callTenTimes = function(callback) {
-  var range = _.range(10);
-  _.each(range, callback);
+  for(var i = 0; i < 10; i++){
+    callback();
+  }
 };
 
 // Put your answer below -------------------------
 
+function callNTimes(callback, n) {
+  for(var i = 0; i < n; i++){
+    callback();
+  }
+};
 
 // -----------------------------------------------
 
@@ -294,12 +305,12 @@ function addNumbers(numberA, numberB) {
 // Put your answer below -------------------------
 
 /*The speed would be set to NaN above because +=
-* sets "speed"'s value to speed + amount. Thus, if
-* "amount" is not given an integer value, the value
-* of speed becomes defined as 0 + [undefined]. And
-* since [undefined] is not a number, it cannot be
-* added to 0 to create an integer value for speed
-* (i.e. NaN).*/
+ * sets speed's value to speed + amount. Thus, if
+ * amount is not given an integer value, the value
+ * of speed becomes defined as 0 + [undefined]. And
+ * since [undefined] is not a number, it cannot be
+ * added to 0 to create an integer value for speed
+ * (i.e. NaN).*/
 
 var speed = 0;
 
@@ -327,7 +338,7 @@ function accelerate(amount) {
 // The function below allows you to call another
 // function at a later time. It takes 2 params, an
 // amount of miliseconds and a function. It will
-// call the function that many miliseconds later.
+// call the function that many milliseconds later.
 // Refactor it so that is has a default timeout.
 
 // This is more advanced than the default param on
@@ -353,6 +364,7 @@ var callLater = function(timeout, callback) {
 };
 
 // Put your answer below -------------------------
+
 
 
 // -----------------------------------------------
