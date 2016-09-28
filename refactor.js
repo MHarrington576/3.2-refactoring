@@ -23,12 +23,15 @@
 // to a variable containing an anonymous
 // function
 
-function doSomethingCool() {
-  console.log("Something Cool!");
-}
+// function doSomethingCool() {
+//   console.log("Something Cool!");
+// }
 
 // Put your answer below -------------------------
 
+var doSomethingCool = function(){
+  console.log("Something Cool!");
+}
 
 // -----------------------------------------------
 
@@ -41,14 +44,17 @@ function doSomethingCool() {
 // after 2 seconds. Refactor to use an anonymous
 // function
 
-function sayHi() {
-  alert("Hello, World!");
-}
-
-setTimeout(sayHi, 2000);
+// function sayHi() {
+//   alert("Hello, World!");
+// }
+//
+// setTimeout(sayHi, 2000);
 
 // Put your answer below -------------------------
 
+setTimeout(function(){
+  alert("Hello, World!");
+}, 2000);
 
 // -----------------------------------------------
 
@@ -67,18 +73,24 @@ setTimeout(sayHi, 2000);
 
 // Please explain your answer.
 
-var letter = "x";
-
-setTimeout(function(){
-  letter = "y";
-  console.log("The letter is", letter);
-}, 1);
-
-letter = "z";
-console.log("The letter is", letter);
+// var letter = "x";
+//
+// setTimeout(function(){
+//   letter = "y";
+//   console.log("The letter is", letter);
+// }, 1);
+//
+// letter = "z";
+// console.log("The letter is", letter);
 
 // Put your answer below -------------------------
 
+C: "x" will not appear because there is no point in
+    the code that commands the console to log "x",
+    and "z" will appear before "y" because the code
+    tells the interpreter to wait one millisecond
+    before logging "y", whereas "z" has no such
+    time restriction.
 
 // -----------------------------------------------
 
@@ -91,16 +103,19 @@ console.log("The letter is", letter);
 // of the function is 5 lines of code. Refactor
 // this function to do the same thing with 1 line
 
-var reverseStr = function(str) {
-  var arr;
-  arr = str.split("");
-  arr = arr.reverse();
-  str = arr.join("");
-  return str;
-};
+// var reverseStr = function(str) {
+//   var arr;
+//   arr = str.split("");
+//   arr = arr.reverse();
+//   str = arr.join("");
+//   return str;
+// };
 
 // Put your answer below -------------------------
 
+var reverseStr = function(str) {
+  return s.split("").reverse().join("");
+};
 
 // -----------------------------------------------
 
@@ -109,7 +124,7 @@ var reverseStr = function(str) {
 
 // 5. --------------------------------------------
 
-// The function below takes the spanish word for
+// The function below takes the Spanish word for
 // the colors red, white, blue, green, and black
 // and returns the hex code for that color.
 // Refactor this function to use an object
@@ -135,6 +150,17 @@ var spanishColor = function(colorName) {
 
 // Put your answer below -------------------------
 
+var spanishColor = {
+  "rojo": "#FF0000",
+  "blanco": "#FFFFFF",
+  "azul": "#0000FF",
+  "verde": "#00FF00",
+  "negro": "#000000"
+}
+
+function(colorName) {
+  colorName.toLowerCase() === 
+}
 
 // -----------------------------------------------
 
