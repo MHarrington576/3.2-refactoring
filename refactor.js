@@ -365,7 +365,14 @@ var callLater = function(timeout, callback) {
 
 // Put your answer below -------------------------
 
-
+function callLater(timeout, callback) {
+  if (typeof timeout === 'number'){
+    setTimeout(callback, timeout);
+  }
+  else {
+    setTimeout(timeout, 1000);
+  }
+};
 
 // -----------------------------------------------
 
