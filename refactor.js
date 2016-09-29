@@ -315,12 +315,10 @@ function addNumbers(numberA, numberB) {
 var speed = 0;
 
 function accelerate(amount) {
-  if (amount >= 1){
-    speed += amount;
+  if (typeof amount === undefined){
+    amount = 1;
   }
-  else {
-    speed = 1;
-  }
+  speed += amount;
 }
 
 // -----------------------------------------------
@@ -359,9 +357,9 @@ function accelerate(amount) {
 //       ...
 //     });
 
-var callLater = function(timeout, callback) {
-  setTimeout(callback, timeout);
-};
+// var callLater = function(timeout, callback) {
+//   setTimeout(callback, timeout);
+// };
 
 // Put your answer below -------------------------
 
